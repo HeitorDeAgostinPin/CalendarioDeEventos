@@ -1,0 +1,14 @@
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\CalendarioDeEventos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\CalendarioDeEventos.AssemblyInfoInputs.cache
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\CalendarioDeEventos.AssemblyInfo.cs
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\CalendarioDeEventos.csproj.CoreCompileInputs.cache
+C:\Users\Win10\source\repos\CalendarioDeEventos\bin\Debug\net8.0\CalendarioDeEventos.exe
+C:\Users\Win10\source\repos\CalendarioDeEventos\bin\Debug\net8.0\CalendarioDeEventos.deps.json
+C:\Users\Win10\source\repos\CalendarioDeEventos\bin\Debug\net8.0\CalendarioDeEventos.runtimeconfig.json
+C:\Users\Win10\source\repos\CalendarioDeEventos\bin\Debug\net8.0\CalendarioDeEventos.dll
+C:\Users\Win10\source\repos\CalendarioDeEventos\bin\Debug\net8.0\CalendarioDeEventos.pdb
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\CalendarioDeEventos.dll
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\refint\CalendarioDeEventos.dll
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\CalendarioDeEventos.pdb
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\CalendarioDeEventos.genruntimeconfig.cache
+C:\Users\Win10\source\repos\CalendarioDeEventos\obj\Debug\net8.0\ref\CalendarioDeEventos.dll

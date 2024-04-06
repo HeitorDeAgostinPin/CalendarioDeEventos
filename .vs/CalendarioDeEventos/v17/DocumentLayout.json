@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1025214F-CD2B-432B-9374-0790713F780A}|CalendarioDeEventos.csproj|c:\\users\\win10\\source\\repos\\calendariodeeventos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1025214F-CD2B-432B-9374-0790713F780A}|CalendarioDeEventos.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1025214F-CD2B-432B-9374-0790713F780A}|CalendarioDeEventos.csproj|C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1025214F-CD2B-432B-9374-0790713F780A}|CalendarioDeEventos.csproj|solutionrelative:evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1025214F-CD2B-432B-9374-0790713F780A}|CalendarioDeEventos.csproj|C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\contato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1025214F-CD2B-432B-9374-0790713F780A}|CalendarioDeEventos.csproj|solutionrelative:contato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAowBYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T14:29:24.402Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Evento.cs",
+              "DocumentMoniker": "C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\Evento.cs",
+              "RelativeDocumentMoniker": "Evento.cs",
+              "ToolTip": "C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\Evento.cs",
+              "RelativeToolTip": "Evento.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T14:59:17.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Contato.cs",
+              "DocumentMoniker": "C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\Contato.cs",
+              "RelativeDocumentMoniker": "Contato.cs",
+              "ToolTip": "C:\\Users\\Win10\\source\\repos\\CalendarioDeEventos\\Contato.cs",
+              "RelativeToolTip": "Contato.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T14:57:46.001Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
