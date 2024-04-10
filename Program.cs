@@ -1,4 +1,4 @@
-﻿using CalendarioDeEventos;
+using CalendarioDeEventos;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -20,7 +20,7 @@ namespace CalendarioDeEventos
             bool sair = false;
 
             while (!sair)
-            {
+            {//menuzinho show aqui
                 Console.WriteLine("Selecione uma opção:");
                 Console.WriteLine("1 - Cadastrar Evento");
                 Console.WriteLine("2 - Listar Eventos");
@@ -35,7 +35,7 @@ namespace CalendarioDeEventos
                 int opcao;
 
                 if (!int.TryParse(Console.ReadLine(), out opcao))
-                {
+                {//pega oque o usuario escreveu e confere se exite nas opções
                     Console.WriteLine("Comando Não Reconhecido, Tente Novamente.");
                     continue;
                 }
@@ -43,7 +43,7 @@ namespace CalendarioDeEventos
                 try
                 {
                     switch (opcao)
-                    {
+                    {//aqui são os casos que vão cair dependendo doque vc digitar
                         case 1:
                             CadastrarEvento();
                             break;
@@ -86,16 +86,18 @@ namespace CalendarioDeEventos
                     }
                 }
                 catch (Exception ex)
-                {
+                {//tratamento basiquinho de exessão aqui
                     Console.WriteLine("Erro: " + ex.Message);
                 }
             }
         }
 
         static void CadastrarEvento()
-        {
-            Evento evento = new Evento();
-
+        {   Evento evento = new Evento();
+            //aqui onde se vão obter as informações do evento 
+           
+            //tb criei uma variavel local
+            //recebendo as informções inseridas ai por voce e convertendo se necessario
             Console.WriteLine("O Sistema Ira Gerar Um Id Alfanumérico Para Seu Evento");
             evento.Id = Path.GetRandomFileName().Replace(".", "").Substring(0, 6);
 
@@ -106,6 +108,7 @@ namespace CalendarioDeEventos
 
             Console.WriteLine("Informe A Data Inicial De Seu Evento");
             string dataInicioEventoString = Console.ReadLine();
+
 
             DateTime dataInicioEvento;
             bool isParseSuccessful = DateTime.TryParse(dataInicioEventoString, out dataInicioEvento);
@@ -147,14 +150,14 @@ namespace CalendarioDeEventos
             Console.WriteLine("Evento Cadastrado Com Sucesso! ");
 
             Console.WriteLine("<==========================================================================>");
-
+            //aqui adiciona as informações na lista
             eventos.Add(evento);
         }
 
         static void ListarEventos()
         {
             foreach (Evento evento in eventos)
-            {
+            {//percorre a lista eventos e exibe todos eventos cadastrados
                 Console.WriteLine($"Id Do Evento : {evento.Id}");
                 Console.WriteLine($"Titulo Do Evento :{evento.TituloEvento}");
                 Console.WriteLine($"Data Inicial Do Evento :{evento.DataInicioEvento}");
@@ -171,12 +174,12 @@ namespace CalendarioDeEventos
         static void PesquisarEventoPorId()
         {
             try
-            {
+            {//le a informação que voce digitou e busca para ver se tem algum id igual ela
                 Console.WriteLine("Digite O Id Do Evento Que Voçê Deseja Buscar");
                 string Id = Console.ReadLine();
 
                 foreach (Evento evento in eventos)
-                {
+                {//se tiver vai exibir tudo daquele determinado evento
                     if (evento.Id.Equals(Id))
                     {
                         Console.WriteLine($"Id Do Evento : {evento.Id}");
@@ -206,6 +209,7 @@ namespace CalendarioDeEventos
             {
                 Console.WriteLine("Digite o ID do evento que você deseja editar:");
                 string idEventoEditar = Console.ReadLine();
+                // pega o id que voce digitou e confere se essa informação com o primeiro que corresponde a ela
 
                 Evento eventoParaEditar = eventos.FirstOrDefault(e => e.Id.Equals(idEventoEditar));
 
@@ -215,7 +219,7 @@ namespace CalendarioDeEventos
                     Console.WriteLine("Digite o novo título do evento:");
                     eventoParaEditar.TituloEvento = Console.ReadLine();
 
-                    // Outras informações do evento podem ser editadas da mesma forma (data, descrição, etc.)
+                    
 
                     Console.WriteLine("Evento atualizado com sucesso!");
                 }
@@ -312,41 +316,42 @@ namespace CalendarioDeEventos
 
         static void SalvarEmTXT()
         {
-            
+
 
             try
             {
-                Console.WriteLine("Crie a pasta Eventos No Disco Local C Se Ainda Não Existir");
-
-                string pastaDestino = "C:\\Eventos"; //caminho da pasta
-                string nomeArquivo = "C:\\Eventos";
+                string pastaDestino = @"C:\Eventos";
+                string nomeArquivo = "Eventos.txt";
                 string caminhoCompleto = Path.Combine(pastaDestino, nomeArquivo);
 
-                using (StreamWriter sw = new StreamWriter(caminhoCompleto, true)) { 
-
-                    foreach (Evento evento in evento)
+                using (StreamWriter sw = new StreamWriter(caminhoCompleto))
                 {
-                    sw.WriteLine($"Id Do Evento : {evento.Id}");
-                    sw.WriteLine($"Titulo Do Evento :{evento.TituloEvento}");
-                    sw.WriteLine($"Data Inicial Do Evento :{evento.DataInicioEvento}");
-                    sw.WriteLine($"Data De Termino Do Evento : {evento.DataTerminoEvento}");
-                    sw.WriteLine($"Descreição Do Evento :{evento.Descricao}");
-                    sw.WriteLine($"Qauntidade De pessoas Que comparecerão No Evento :{evento.QuantidadeDePessoas}");
-                    sw.WriteLine($"Publico Alvo Do Evento :{evento.PublicoAlvo}");
-                    sw.WriteLine($"Dados De Contato Do Responsavel Pelo Evento :{evento.ContatoDoResponsavel}");
-                    sw.WriteLine();
-                }
+                    foreach (Evento evento in eventos)
+                    {
+                        sw.WriteLine($"Id Do Evento : {evento.Id}");
+                        sw.WriteLine($"Titulo Do Evento : {evento.TituloEvento}");
+                        sw.WriteLine($"Data Inicial Do Evento : {evento.DataInicioEvento}");
+                        sw.WriteLine($"Data De Termino Do Evento : {evento.DataTerminoEvento}");
+                        sw.WriteLine($"Descrição Do Evento : {evento.Descricao}");
+                        sw.WriteLine($"Quantidade De Pessoas Que Comparecerão No Evento : {evento.QuantidadeDePessoas}");
+                        sw.WriteLine($"Publico Alvo Do Evento : {evento.PublicoAlvo}");
+                        if (evento.ContatoDoResponsavel != null)
+                        {
+                            sw.WriteLine($"Dados De Contato Do Responsável Pelo Evento : Nome: {evento.ContatoDoResponsavel.Nome}, Telefone: {evento.ContatoDoResponsavel.Telefone}, Email: {evento.ContatoDoResponsavel.Email}");
+                        }
+                        else
+                        {
+                            sw.WriteLine("Responsável pelo evento não cadastrado.");
+                        }
+                        sw.WriteLine("<==========================================================================>");
                     }
+                }
 
-                
-                Console.WriteLine("Informações Salvas Com Sucesso Em Eventos.txt");
-
-                Console.WriteLine("<==========================================================================>");
+                Console.WriteLine("Informações salvas com sucesso no arquivo de texto.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erro ao salvar informações em arquivo de texto. " + ex.Message);
-
+                Console.WriteLine("Erro ao salvar informações em arquivo de texto: " + ex.Message);
             }
         }
 
@@ -355,30 +360,31 @@ namespace CalendarioDeEventos
         {
             try
             {
-                Console.WriteLine("Digite a data (no formato dd/mm/aaaa) para pesquisar eventos:");
-                string dataPesquisaString = Console.ReadLine();
+                Console.WriteLine("Digite a data para pesquisar eventos (dd/MM/yyyy):");
+                DateTime dataPesquisa = LerData();
 
-                if (DateTime.TryParseExact(dataPesquisaString, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataPesquisa))
+                var eventosNaData = eventos.Where(e => e.DataInicioEvento.Date == dataPesquisa.Date || e.DataTerminoEvento.Date == dataPesquisa.Date);
+
+                if (eventosNaData.Any())
                 {
-                    var eventosNaData = evento.Where(e => e.DataInicioEvento.Date == dataPesquisa.Date || e.DataTerminoEvento.Date == dataPesquisa.Date);
-
-                    if (eventosNaData.Any())
+                    Console.WriteLine($"Eventos encontrados na data {dataPesquisa.ToShortDateString()}:");
+                    foreach (var evento in eventosNaData)
                     {
-                        Console.WriteLine($"Eventos encontrados na data {dataPesquisa.ToShortDateString()}:");
+                        Console.WriteLine($"Id Do Evento : {evento.Id}");
+                        Console.WriteLine($"Titulo Do Evento :{evento.TituloEvento}");
+                        Console.WriteLine($"Data Inicial Do Evento :{evento.DataInicioEvento}");
+                        Console.WriteLine($"Data De Termino Do Evento : {evento.DataTerminoEvento}");
+                        Console.WriteLine($"Descreição Do Evento :{evento.Descricao}");
+                        Console.WriteLine($"Qauntidade De pessoas Que comparecerão No Evento :{evento.QuantidadeDePessoas}");
+                        Console.WriteLine($"Publico Alvo Do Evento :{evento.PublicoAlvo}");
+                        Console.WriteLine($"Dados De Contato Do Responsavel Pelo Evento :{evento.ContatoDoResponsavel}");
 
-                        foreach (var evento in eventosNaData)
-                        {
-                            Console.WriteLine($"ID: {evento.Id}, Título: {evento.TituloEvento}");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Nenhum evento encontrado na data {dataPesquisa.ToShortDateString()}.");
+                        Console.WriteLine("<==========================================================================>");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Data inválida. Certifique-se de inserir uma data no formato correto (exemplo: 01/04/2024).");
+                    Console.WriteLine($"Nenhum evento encontrado na data {dataPesquisa.ToShortDateString()}.");
                 }
             }
             catch (Exception ex)
@@ -387,6 +393,14 @@ namespace CalendarioDeEventos
             }
         }
 
-
+        static DateTime LerData()
+        {
+            DateTime data;
+            while (!DateTime.TryParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out data))
+            {
+                Console.WriteLine("Data inválida. Por favor, insira a data no formato correto (dd/MM/yyyy).");
+            }
+            return data;
+        }
     }
 }
