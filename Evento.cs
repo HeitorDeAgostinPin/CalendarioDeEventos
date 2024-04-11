@@ -1,4 +1,4 @@
-﻿/*using System;
+/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,8 @@ namespace CalendarioDeEventos
         public string Descricao { get; set; }
         public int QuantidadeDePessoas { get; set; }
         public string PublicoAlvo { get; set; }
-        public Contato ContatoDoResponsavel { get; set; }
+        public string IdContatoResponsavel { get; set; }
 
+        public string contatoResponsavel { get; set; }
     }
 }
