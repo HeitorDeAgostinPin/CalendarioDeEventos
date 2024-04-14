@@ -249,7 +249,7 @@ namespace CalendarioDeEventos
             string caminhoCompleto = Path.Combine(pastaDestino, nomeArquivo);
 
             try
-            {
+            { Console.WriteLine("OBSEVAÇÃO: crei a pasta Eventos no seu dico local C, não temos orcamento pra fazer mais que isso");
                 using (StreamWriter sw = new StreamWriter(caminhoCompleto))
                 {
                     foreach (Evento evento in eventos)
